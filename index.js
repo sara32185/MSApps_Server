@@ -22,7 +22,7 @@ app.use(cors());
 app.use("/pagination", paginationRoutes);
 app.use("/sort", sortRoutes);
 
-// MONGOOSE SETUP
+//Server will run in 3006 port
 const port = 3006;
 const url = "http://localhost:" + port;
 

@@ -1,9 +1,12 @@
 import express from "express";
 import {
-  sortImagesByKey
+  sortDataByKey
 } from "../controllers/sort.js";
 const router = express.Router();
 
-router.post("/sortByKey/:sortBy", sortImagesByKey);
+//This rout implements sort by key, it supposed to get  in the req body:
+//data- From pixabay api
+//sortBy- The key to sort the data by it
+router.post("/sortByKey/:sortBy", sortDataByKey);
 
 export default router;

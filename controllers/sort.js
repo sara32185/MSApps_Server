@@ -1,4 +1,4 @@
-export const sortImagesByKey = async (req, res) => {
+export const sortDataByKey = async (req, res) => {
   try {
     const sortBy = req.params.sortBy
     const data = req.body.data;
@@ -6,7 +6,6 @@ export const sortImagesByKey = async (req, res) => {
     let newData = data.sort((a, b) => {
       var keyA = a[sortBy],
         keyB = b[sortBy];
-      console.log("sortBy", a[sortBy], b[sortBy]);
       // Compare the 2 keys
       if (keyA < keyB) return -1;
       if (keyA > keyB) return 1;
