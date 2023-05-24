@@ -6,7 +6,7 @@ export const getPaginationData = async (req, res) => {
     const total = parseInt(req.body.total);
     const data = req.body.data;
 
-    if (!limit || !total || !data)
+    if (!limit || !total && total != 0)
       res.status(422).send("Request body isn't correct");
 
     const results = {};
@@ -29,7 +29,6 @@ export const getPaginationData = async (req, res) => {
         endIndex >= total ?
           results.disableNext = true :
           results.disableNext = false;
-
         break;
       }
       default: {
